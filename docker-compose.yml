@@ -22,7 +22,7 @@ services:
             - "8000:8000"
         volumes:
             - ./symphony:/var/www/symfony
-            - ./symphony/app/logs/:/var/www/symfony/app/logs
+            - ./symphony/var/logs/:/var/www/symfony/var/logs
         links:
             - proethos2_db:db
         command: bash /runserver.sh

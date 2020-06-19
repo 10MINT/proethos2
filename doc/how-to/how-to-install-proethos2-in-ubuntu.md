@@ -139,11 +139,11 @@ mkdir uploads/
 
 Remember that the directories below needs to have write permissions from apache:
 ```
-sudo chgrp www-data -R app/logs
-sudo chgrp www-data -R app/cache
+sudo chgrp www-data -R var/logs
+sudo chgrp www-data -R var/cache
 sudo chgrp www-data -R uploads
-chmod -R 0775 app/cache
-chmod -R 0775 app/logs
+chmod -R 0775 var/cache
+chmod -R 0775 var/logs
 chmod -R 0775 uploads
 ```
 
@@ -206,8 +206,8 @@ Now, we have to give the right permissions to all structure:
 
 ```
 $ cd ~/project/proethos2/git/symphony
-$ rm -rf app/cache/*
-$ rm -rf app/logs/*
+$ rm -rf var/cache/*
+$ rm -rf var/logs/*
 ```
 
 Software configuration

@@ -2,6 +2,7 @@
 # Example: make test php=php5.6
 php=php
 dt=$(shell date --iso=seconds)
+console=bin/console
 
 git_pull:
 	git pull
@@ -19,44 +20,44 @@ setup_ci:
 	make load_initial
 
 load_initial: database_update
-	$(php) app/console proethos2:load-database-initial-data
+	$(php) $(console) proethos2:load-database-initial-data
 
 update_initial:
-	$(php) app/console proethos2:load-database-initial-data --update
+	$(php) $(console) proethos2:load-database-initial-data --update
 
 generate_initial:
-	$(php) app/console proethos2:generate-database-initial-data
-	$(php) app/console proethos2:generate-database-translations > fixtures/data_ext_translations.sql
+	$(php) $(console) proethos2:generate-database-initial-data
+	$(php) $(console) proethos2:generate-database-translations > fixtures/data_ext_translations.sql
 
 generate_translations:
 	
 	# generating the files
-	$(php) app/console translation:extract pt_BR --dir=src --dir=app/Resources/views --output-dir=./app/Resources/translations
-	$(php) app/console translation:extract es_ES --dir=src --dir=app/Resources/views --output-dir=./app/Resources/translations
-	$(php) app/console translation:extract fr_FR --dir=src --dir=app/Resources/views --output-dir=./app/Resources/translations
+	$(php) $(console) translation:extract pt_BR --dir=src --dir=app/Resources/views --output-dir=./app/Resources/translations
+	$(php) $(console) translation:extract es_ES --dir=src --dir=app/Resources/views --output-dir=./app/Resources/translations
+	$(php) $(console) translation:extract fr_FR --dir=src --dir=app/Resources/views --output-dir=./app/Resources/translations
 
 	# "removes all reference-file lines from locale files"
 	find app/ -type f -name "*.xlf" -exec sed -i '/jms:reference-file line/d' {} \;
 	find app/ -type f -name "*.xlf" -exec sed -i 's/ state\=\"new\"//g' {} \;
 
 database_update:
-	$(php) app/console doctrine:schema:update --force
+	$(php) $(console) doctrine:schema:update --force
 
 clear_cache:
-	mkdir -p app/cache/prod
-	mkdir -p app/cache/dev
-	mv app/cache/prod app/cache/$(dt)-prod
-	mv app/cache/dev app/cache/$(dt)-dev
-	rm -rf app/cache/*
+	mkdir -p var/cache/prod
+	mkdir -p var/cache/dev
+	mv var/cache/prod var/cache/$(dt)-prod
+	mv var/cache/dev var/cache/$(dt)-dev
+	rm -rf var/cache/*
 
 set_permissions:
 	find -type f -name "*.xlf" | xargs chmod 0777
 	find -type f -name "*.sh" | xargs chmod +x
 
 generate_help:
-	$(php) app/console proethos2:generate-help-messages
+	$(php) $(console) proethos2:generate-help-messages
 
 update: git_pull database_update set_permissions clear_cache
 
 runserver:
-	$(php) app/console server:run -v 0.0.0.0:8000
+	$(php) $(console) server:run -v 0.0.0.0:8000
