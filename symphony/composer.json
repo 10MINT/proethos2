@@ -8,22 +8,22 @@
     },
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "2.6.*",
+        "symfony/symfony": "2.8.*",
         "doctrine/orm": "~2.2,>=2.2.3",
         "doctrine/doctrine-bundle": "~1.2",
         "twig/extensions": "~1.0",
-        "symfony/assetic-bundle": "~2.3",
-        "symfony/swiftmailer-bundle": "~2.3",
-        "symfony/monolog-bundle": "~2.4",
+        "symfony/assetic-bundle": "^2.3",
+        "symfony/swiftmailer-bundle": "^2.3",
+        "symfony/monolog-bundle": "^2.4",
         "sensio/distribution-bundle": "~3.0.12",
         "sensio/framework-extra-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.0",
         "cocur/slugify": "^2.1",
-        "knplabs/knp-snappy-bundle": "dev-master",
-        "jms/translation-bundle": "^1.2",
+        "knplabs/knp-snappy-bundle": "1.4",
+        "jms/translation-bundle": "^1.4.2",
         "jms/di-extra-bundle": "^1.7",
         "gedmo/doctrine-extensions": "^2.4",
-        "symfony/intl": "^3.1",
+        "symfony/intl": "*",
         "h4cc/wkhtmltopdf-amd64": "0.12.3"
     },
     "require-dev": {
@@ -52,7 +52,8 @@
         ]
     },
     "config": {
-        "bin-dir": "bin"
+        "bin-dir": "bin",
+        "sort-packages": true
     },
     "extra": {
         "symfony-app-dir": "app",
@@ -62,7 +63,7 @@
             "file": "app/config/parameters.yml"
         },
         "branch-alias": {
-            "dev-master": "2.6-dev"
+            "dev-master": "2.8-dev"
         }
     }
 }
