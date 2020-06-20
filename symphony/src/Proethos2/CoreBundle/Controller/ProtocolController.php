@@ -35,7 +35,7 @@ class ProtocolController extends Controller
 {
     /**
      * @Route("/protocol/{protocol_id}", name="protocol_show_protocol")
-     * @Template()
+     * @Template("@Proethos2Core/Protocol/showProtocol.html.twig")
      */
     public function showProtocolAction($protocol_id)
     {
@@ -211,7 +211,7 @@ class ProtocolController extends Controller
 
     /**
      * @Route("/protocol/{protocol_id}/attachment", name="protocol_new_attachment")
-     * @Template()
+     * @Template("@Proethos2Core/Protocol/newAttachment.html.twig")
      */
     public function newAttachmentProtocolAction($protocol_id)
     {
@@ -311,7 +311,7 @@ class ProtocolController extends Controller
 
     /**
      * @Route("/protocol/{protocol_id}/analyze", name="protocol_analyze_protocol")
-     * @Template()
+     * @Template("@Proethos2Core/Protocol/analyzeProtocol.html.twig")
      */
     public function analyzeProtocolAction($protocol_id)
     {
@@ -591,7 +591,7 @@ class ProtocolController extends Controller
 
     /**
      * @Route("/protocol/{protocol_id}/initial-committee-screening", name="protocol_initial_committee_screening")
-     * @Template()
+     * @Template("@Proethos2Core/Protocol/initCommitteeScreening.html.twig")
      */
     public function initCommitteeScreeningAction($protocol_id)
     {
@@ -783,7 +783,7 @@ class ProtocolController extends Controller
 
     /**
      * @Route("/protocol/{protocol_id}/initial-committee-review", name="protocol_initial_committee_review")
-     * @Template()
+     * @Template("@Proethos2Core/Protocol/initCommitteeReview.html.twig")
      */
     public function initCommitteeReviewAction($protocol_id)
     {
@@ -951,7 +951,7 @@ class ProtocolController extends Controller
 
     /**
      * @Route("/protocol/{protocol_id}/initial-committee-review/revisor", name="protocol_initial_committee_review_revisor")
-     * @Template()
+     * @Template("@Proethos2Core/Protocol/initCommitteeReviewRevisor.html.twig")
      */
     public function initCommitteeReviewRevisorAction($protocol_id)
     {
@@ -1033,7 +1033,7 @@ class ProtocolController extends Controller
 
     /**
      * @Route("/protocol/{protocol_id}/initial-committee-review/show-review/{protocol_revision_id}", name="protocol_initial_committee_review_show_review")
-     * @Template()
+     * @Template("@Proethos2Core/Protocol/showReview.html.twig")
      */
     public function showReviewAction($protocol_id, $protocol_revision_id)
     {
@@ -1057,7 +1057,7 @@ class ProtocolController extends Controller
 
     /**
      * @Route("/protocol/{protocol_id}/end-review", name="protocol_end_review")
-     * @Template()
+     * @Template("@Proethos2Core/Protocol/endReview.html.twig")
      */
     public function endReviewAction($protocol_id)
     {
@@ -1215,7 +1215,7 @@ class ProtocolController extends Controller
 
     /**
      * @Route("/protocol/{protocol_id}/delete", name="protocol_delete")
-     * @Template()
+     * @Template("@Proethos2Core/Protocol/delete.html.twig")
      */
     public function deleteAction($protocol_id)
     {
@@ -1272,7 +1272,7 @@ class ProtocolController extends Controller
 
     /**
      * @Route("/protocol/{protocol_id}/report", name="protocol_generate_report")
-     * @Template()
+     * @Template("@Proethos2Core/Protocol/meta.html.twig")
      */
     public function showReportAction($protocol_id)
     {

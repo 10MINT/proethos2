@@ -41,7 +41,7 @@ class NewSubmissionController extends Controller
 {
     /**
      * @Route("/submission/new/first", name="submission_new_first_step")
-     * @Template()
+     * @Template("@Proethos2Core/NewSubmission/FirstStep.html.twig")
      */
     public function FirstStepAction(Request $request)
     {
@@ -101,7 +101,7 @@ class NewSubmissionController extends Controller
 
     /**
      * @Route("/submission/new/{submission_id}/first", name="submission_new_first_created_protocol_step")
-     * @Template()
+     * @Template("@Proethos2Core/NewSubmission/FirstStepCreatedProtocol.html.twig")
      */
     public function FirstStepCreatedProtocolAction($submission_id)
     {
@@ -160,7 +160,7 @@ class NewSubmissionController extends Controller
 
     /**
      * @Route("/submission/new/{submission_id}/translation", name="submission_new_first_translation_protocol_step")
-     * @Template()
+     * @Template("@Proethos2Core/NewSubmission/FirstStepTranslationProtocol.html.twig")
      */
     public function FirstStepTranslationProtocolAction($submission_id)
     {
@@ -241,7 +241,7 @@ class NewSubmissionController extends Controller
 
     /**
      * @Route("/submission/new/{submission_id}/second", name="submission_new_second_step")
-     * @Template()
+     * @Template("@Proethos2Core/NewSubmission/SecondStep.html.twig")
      */
     public function SecondStepAction($submission_id)
     {
@@ -362,7 +362,7 @@ class NewSubmissionController extends Controller
 
     /**
      * @Route("/submission/new/{submission_id}/third", name="submission_new_third_step")
-     * @Template()
+     * @Template("@Proethos2Core/NewSubmission/ThirdStep.html.twig")
      */
     public function ThirdStepAction($submission_id)
     {
@@ -537,7 +537,7 @@ class NewSubmissionController extends Controller
 
     /**
      * @Route("/submission/new/{submission_id}/fourth", name="submission_new_fourth_step")
-     * @Template()
+     * @Template("@Proethos2Core/NewSubmission/FourthStep.html.twig")
      */
     public function FourthStepAction($submission_id)
     {
@@ -749,7 +749,7 @@ class NewSubmissionController extends Controller
 
     /**
      * @Route("/submission/new/{submission_id}/fifth", name="submission_new_fifth_step")
-     * @Template()
+     * @Template("@Proethos2Core/NewSubmission/FifthStep.html.twig")
      */
     public function FifthStepAction($submission_id)
     {
@@ -837,7 +837,7 @@ class NewSubmissionController extends Controller
 
     /**
      * @Route("/submission/new/{submission_id}/sixth", name="submission_new_sixth_step")
-     * @Template()
+     * @Template("@Proethos2Core/NewSubmission/SixthStep.html.twig")
      */
     public function SixtyStepAction($submission_id)
     {
@@ -948,7 +948,7 @@ class NewSubmissionController extends Controller
 
     /**
      * @Route("/submission/new/{submission_id}/seventh", name="submission_new_seventh_step")
-     * @Template()
+     * @Template("@Proethos2Core/NewSubmission/SeventhStep.html.twig")
      */
     public function SeventhStepAction($submission_id)
     {
@@ -1418,7 +1418,7 @@ class NewSubmissionController extends Controller
 
     /**
      * @Route("/submission/new/{submission_id}/pdf", name="submission_generate_pdf")
-     * @Template()
+     * @Template("@Proethos2Core/NewSubmission/showPdf.html.twig")
      */
     public function showPdfAction($submission_id)
     {

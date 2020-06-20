@@ -30,7 +30,7 @@ class SecurityController extends Controller
 {
     /**
      * @Route("/login", name="login_route")
-     * @Template()
+     * @Template("@Proethos2Core/Security/login.html.twig")
      */
     public function loginAction()
     {
@@ -95,7 +95,7 @@ class SecurityController extends Controller
 
     /**
      * @Route("/account/change_password", name="security_change_password")
-     * @Template()
+     * @Template("@Proethos2Core/Security/changePassword.html.twig")
      */
     public function changePasswordAction()
     {
@@ -149,7 +149,7 @@ class SecurityController extends Controller
 
     /**
      * @Route("/public/account/forgot-my-password", name="security_forgot_my_password")
-     * @Template()
+     * @Template("@Proethos2Core/Security/forgotMyPassword.html.twig")
      */
     public function forgotMyPasswordAction()
     {
@@ -227,7 +227,7 @@ class SecurityController extends Controller
 
     /**
      * @Route("/public/account/reset_my_password", name="security_reset_my_password")
-     * @Template()
+     * @Template("@Proethos2Core/Security/resetMyPassword.html.twig")
      */
     public function resetMyPasswordAction()
     {
@@ -295,7 +295,7 @@ class SecurityController extends Controller
 
     /**
      * @Route("/public/account/new", name="security_new_user")
-     * @Template()
+     * @Template("@Proethos2Core/Security/newUser.html.twig")
      */
     public function newUserAction()
     {

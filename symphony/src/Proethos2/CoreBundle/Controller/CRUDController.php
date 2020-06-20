@@ -42,7 +42,7 @@ class CRUDController extends Controller
 {
     /**
      * @Route("/committee/meeting", name="crud_committee_meeting_list")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/listMeeting.html.twig")
      */
     public function listMeetingAction()
     {
@@ -105,7 +105,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/committee/meeting/{meeting_id}", name="crud_committee_meeting_update")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/updateMeeting.html.twig")
      */
     public function updateMeetingAction($meeting_id)
     {
@@ -156,7 +156,7 @@ class CRUDController extends Controller
 
      /**
      * @Route("/committee/meeting/{meeting_id}/show", name="crud_committee_meeting_show")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/showMeeting.html.twig")
      */
     public function showMeetingAction($meeting_id)
     {
@@ -185,7 +185,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/committee/meeting/{meeting_id}/delete", name="crud_committee_meeting_delete")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/deleteMeeting.html.twig")
      */
     public function deleteMeetingAction($meeting_id)
     {
@@ -231,7 +231,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/committee/protocol", name="crud_committee_protocol_list")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/listCommitteeProtocol.twig")
      */
     public function listCommitteeProtocolAction()
     {
@@ -312,7 +312,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/investigator/protocol", name="crud_investigator_protocol_list")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/listInvestigatorProtocol.twig")
      */
     public function listInvestigatorProtocolAction()
     {
@@ -360,7 +360,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/committee/faq", name="crud_committee_faq_list")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/listCommitteeFaq.html.twig")
      */
     public function listCommitteeFaqAction()
     {
@@ -434,7 +434,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/committee/faq/{faq_id}", name="crud_committee_faq_update")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/updateCommitteeFaq.html.twig")
      */
     public function updateCommitteeFaqAction($faq_id)
     {
@@ -506,7 +506,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/committee/faq/{faq_id}/delete", name="crud_committee_faq_delete")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/deleteCommitteeFaq.html.twig")
      */
     public function deleteCommitteeFaqAction($faq_id)
     {
@@ -552,7 +552,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/public/faq", name="crud_faq_list")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/listFaq.html.twig")
      */
     public function listFaqAction()
     {
@@ -572,7 +572,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/committee/documents", name="crud_committee_document_list")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/listCommitteeDocument.html.twig")
      */
     public function listCommitteeDocumentAction()
     {
@@ -648,7 +648,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/committee/document/{document_id}", name="crud_committee_document_update")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/updateCommitteeDocument.html.twig")
      */
     public function updateCommitteeDocumentAction($document_id)
     {
@@ -715,7 +715,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/committee/document/{document_id}/delete", name="crud_committee_document_delete")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/deleteCommitteeDocument.html.twig")
      */
     public function deleteCommitteeDocumentAction($document_id)
     {
@@ -762,7 +762,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/document", name="crud_document_list")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/listDocument.html.twig")
      */
     public function listDocumentAction()
     {
@@ -797,7 +797,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/committee/users", name="crud_committee_user_list")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/listCommitteeUser.html.twig")
      */
     public function listCommitteeUserAction()
     {
@@ -941,7 +941,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/account/update_profile", name="crud_user_profile_update")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/updateUserProfile.html.twig")
      */
     public function updateUserProfileAction()
     {
@@ -991,7 +991,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/committee/user/{user_id}", name="crud_committee_user_update")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/updateCommitteeUser.html.twig")
      */
     public function updateCommitteeUserAction($user_id)
     {
@@ -1092,7 +1092,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/committee/user/{user_id}/key", name="crud_committee_user_get_key_to_change_password")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/getKeyToChangePasswordCommitteeUser.html.twig")
      */
     public function getKeyToChangePasswordCommitteeUserAction($user_id)
     {
@@ -1126,7 +1126,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/committee/user/{user_id}/role", name="crud_committee_user_role_update")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/updateCommitteeUserRole.html.twig")
      */
     public function updateCommitteeUserRoleAction($user_id)
     {
@@ -1177,7 +1177,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/committee/user/{user_id}/delete", name="crud_committee_user_delete")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/deleteCommitteeUser.html.twig")
      */
     public function deleteCommitteeUserAction($user_id)
     {
@@ -1223,7 +1223,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/public/contact", name="crud_contact_list")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/listContact.html.twig")
      */
     public function listContactAction()
     {
@@ -1294,7 +1294,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/admin/help", name="crud_admin_help_list")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/listAdminHelp.html.twig")
      */
     public function listHelpAction()
     {
@@ -1319,7 +1319,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/admin/help/{help_id}/update", name="crud_admin_help_update")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/updateHelp.html.twig")
      */
     public function updateHelpAction($help_id)
     {
@@ -1381,7 +1381,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/admin/help/{help_id}", name="crud_admin_help_show")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/showHelp.html.twig")
      */
     public function showHelpAction($help_id)
     {
@@ -1441,7 +1441,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/admin/mail", name="crud_admin_mail_list")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/listMail.html.twig")
      */
     public function listMailAction()
     {
@@ -1466,7 +1466,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/admin/mail/{mail_id}/update", name="crud_admin_mail_update")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/updateMail.html.twig")
      */
     public function updateMailAction($mail_id)
     {
@@ -1526,7 +1526,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/admin/mail/{mail_id}", name="crud_admin_mail_show")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/showMail.html.twig")
      */
     public function showMailAction($mail_id)
     {
@@ -1586,7 +1586,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/admin/configuration", name="crud_admin_configuration_list")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/listConfiguration.html.twig")
      */
     public function listConfigurationAction()
     {
@@ -1623,7 +1623,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/admin/configuration/{configuration_id}/update", name="crud_admin_configuration_update")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/updateConfiguration.html.twig")
      */
     public function updateConfigurationAction($configuration_id)
     {
@@ -1685,7 +1685,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/admin/controlled-list/upload-type-extension", name="crud_admin_controlled_list_upload_type_extension_list")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/listControlledListUploadTypeExtension.html.twig")
      */
     public function listControlledListUploadTypeExtensionAction()
     {
@@ -1730,7 +1730,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/admin/controlled-list/upload-type-extension/{item_id}", name="crud_admin_controlled_list_upload_type_extension_update")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/updateControlledListUploadTypeExtension.html.twig")
      */
     public function updateControlledListUploadTypeExtensionAction($item_id)
     {
@@ -1781,7 +1781,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/admin/controlled-list/upload-type", name="crud_admin_controlled_list_upload_type_list")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/listControlledListUploadType.html.twig")
      */
     public function listControlledListUploadTypeAction()
     {
@@ -1847,7 +1847,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/admin/controlled-list/upload-type/{item_id}", name="crud_admin_controlled_list_upload_type_update")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/updateControlledListUploadType.html.twig")
      */
     public function updateControlledListUploadTypeAction($item_id)
     {
@@ -1925,7 +1925,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/admin/controlled-list/recruitment-status", name="crud_admin_controlled_list_recruitment_status_list")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/listControlledListRecruitmentStatus.html.twig")
      */
     public function listControlledListRecruitmentStatusAction()
     {
@@ -1979,7 +1979,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/admin/controlled-list/recruitment-status/{item_id}", name="crud_admin_controlled_list_recruitment_status_update")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/updateControlledListRecruitmentStatus.html.twig")
      */
     public function updateControlledListRecruitmentStatusAction($item_id)
     {
@@ -2042,7 +2042,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/admin/controlled-list/monitoring-action", name="crud_admin_controlled_list_monitoring_action_list")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/listControlledListMonitoringAction.html.twig")
      */
     public function listControlledListMonitoringActionAction()
     {
@@ -2096,7 +2096,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/admin/controlled-list/monitoring-action/{item_id}", name="crud_admin_controlled_list_monitoring_action_update")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/updateControlledListMonitoringAction.html.twig")
      */
     public function updateControlledListMonitoringActionAction($item_id)
     {
@@ -2159,7 +2159,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/admin/controlled-list/clinical-trial-name", name="crud_admin_controlled_list_clinical_trial_name_list")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/listControlledListClinicalTrialName.html.twig")
      */
     public function listControlledListClinicalTrialNameAction()
     {
@@ -2214,7 +2214,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/admin/controlled-list/clinical-trial-name/{item_id}", name="crud_admin_controlled_list_clinical_trial_name_update")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/updateControlledListClinicalTrialName.html.twig")
      */
     public function updateControlledListClinicalTrialNameAction($item_id)
     {
@@ -2278,7 +2278,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/admin/controlled-list/gender", name="crud_admin_controlled_list_gender_list")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/listControlledListGender.html.twig")
      */
     public function listControlledListGenderAction()
     {
@@ -2332,7 +2332,7 @@ class CRUDController extends Controller
 
     /**
      * @Route("/admin/controlled-list/gender/{item_id}", name="crud_admin_controlled_list_gender_update")
-     * @Template()
+     * @Template("@Proethos2Core/CRUD/updateControlledListGender.html.twig")
      */
     public function updateControlledListGenderAction($item_id)
     {

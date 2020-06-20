@@ -34,7 +34,7 @@ class MonitoringController extends Controller
 {
     /**
      * @Route("/protocol/{protocol_id}/monitoring/", name="protocol_new_monitoring")
-     * @Template()
+     * @Template("@Proethos2Core/Monitoring/monitoringCreate.html.twig")
      */
     public function monitoringCreateAction($protocol_id)
     {
@@ -159,7 +159,7 @@ class MonitoringController extends Controller
 
         /**
      * @Route("/protocol/{protocol_id}/monitoring/{monitoring_action_id}", name="protocol_new_monitoring_that_not_amendment")
-     * @Template()
+     * @Template("@Proethos2Core/Monitoring/monitoringCreateThatNotAmendment.html.twig")
      */
     public function monitoringCreateThatNotAmendmentAction($protocol_id, $monitoring_action_id)
     {
