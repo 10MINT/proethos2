@@ -100,7 +100,7 @@ class SecurityController extends Controller
     public function changePasswordAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -108,7 +108,7 @@ class SecurityController extends Controller
         $user = $this->get('security.token_storage')->getToken()->getUser();
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -154,7 +154,7 @@ class SecurityController extends Controller
     public function forgotMyPasswordAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -171,7 +171,7 @@ class SecurityController extends Controller
         // $translations = $trans_repository->findTranslations($help[0]);
         
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -232,7 +232,7 @@ class SecurityController extends Controller
     public function resetMyPasswordAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -256,7 +256,7 @@ class SecurityController extends Controller
         }
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -300,7 +300,7 @@ class SecurityController extends Controller
     public function newUserAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -326,7 +326,7 @@ class SecurityController extends Controller
         // $translations = $trans_repository->findTranslations($help[0]);
         
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();

@@ -41,7 +41,7 @@ class ProtocolController extends Controller
     {
 
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -66,7 +66,7 @@ class ProtocolController extends Controller
         }
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -128,7 +128,7 @@ class ProtocolController extends Controller
     {
 
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -155,7 +155,7 @@ class ProtocolController extends Controller
         $referer = $request->headers->get('referer');
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -216,7 +216,7 @@ class ProtocolController extends Controller
     public function newAttachmentProtocolAction($protocol_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -251,7 +251,7 @@ class ProtocolController extends Controller
         $referer = $request->headers->get('referer');
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -317,7 +317,7 @@ class ProtocolController extends Controller
     {
 
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -347,7 +347,7 @@ class ProtocolController extends Controller
         }
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -597,7 +597,7 @@ class ProtocolController extends Controller
     {
 
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -627,7 +627,7 @@ class ProtocolController extends Controller
         }
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -789,7 +789,7 @@ class ProtocolController extends Controller
     {
 
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -842,7 +842,7 @@ class ProtocolController extends Controller
         }
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -957,7 +957,7 @@ class ProtocolController extends Controller
     {
 
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -987,7 +987,7 @@ class ProtocolController extends Controller
         }
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -1039,7 +1039,7 @@ class ProtocolController extends Controller
     {
 
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1063,7 +1063,7 @@ class ProtocolController extends Controller
     {
 
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1102,7 +1102,7 @@ class ProtocolController extends Controller
         }
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -1221,7 +1221,7 @@ class ProtocolController extends Controller
     {
 
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1240,7 +1240,7 @@ class ProtocolController extends Controller
         }
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -1277,7 +1277,7 @@ class ProtocolController extends Controller
     public function showReportAction($protocol_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1323,7 +1323,7 @@ class ProtocolController extends Controller
     {
 
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();

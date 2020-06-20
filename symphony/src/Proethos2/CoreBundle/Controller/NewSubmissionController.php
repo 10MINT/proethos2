@@ -53,7 +53,7 @@ class NewSubmissionController extends Controller
         $user = $this->get('security.token_storage')->getToken()->getUser();
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -106,7 +106,7 @@ class NewSubmissionController extends Controller
     public function FirstStepCreatedProtocolAction($submission_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -128,7 +128,7 @@ class NewSubmissionController extends Controller
         $output['users'] = $users;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -165,7 +165,7 @@ class NewSubmissionController extends Controller
     public function FirstStepTranslationProtocolAction($submission_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -187,7 +187,7 @@ class NewSubmissionController extends Controller
         $output['users'] = $users;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -246,7 +246,7 @@ class NewSubmissionController extends Controller
     public function SecondStepAction($submission_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -291,7 +291,7 @@ class NewSubmissionController extends Controller
         $output['users'] = $users;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -367,7 +367,7 @@ class NewSubmissionController extends Controller
     public function ThirdStepAction($submission_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -424,7 +424,7 @@ class NewSubmissionController extends Controller
         }
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -542,7 +542,7 @@ class NewSubmissionController extends Controller
     public function FourthStepAction($submission_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -605,7 +605,7 @@ class NewSubmissionController extends Controller
         }
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -754,7 +754,7 @@ class NewSubmissionController extends Controller
     public function FifthStepAction($submission_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -797,7 +797,7 @@ class NewSubmissionController extends Controller
         }
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -842,7 +842,7 @@ class NewSubmissionController extends Controller
     public function SixtyStepAction($submission_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -888,7 +888,7 @@ class NewSubmissionController extends Controller
         }
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -953,7 +953,7 @@ class NewSubmissionController extends Controller
     public function SeventhStepAction($submission_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1185,7 +1185,7 @@ class NewSubmissionController extends Controller
         $output['final_status'] = $final_status;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -1423,7 +1423,7 @@ class NewSubmissionController extends Controller
     public function showPdfAction($submission_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();

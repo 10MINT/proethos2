@@ -39,7 +39,7 @@ class MonitoringController extends Controller
     public function monitoringCreateAction($protocol_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -64,7 +64,7 @@ class MonitoringController extends Controller
         $output['monitoring_actions'] = $monitoring_actions;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -164,7 +164,7 @@ class MonitoringController extends Controller
     public function monitoringCreateThatNotAmendmentAction($protocol_id, $monitoring_action_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -212,7 +212,7 @@ class MonitoringController extends Controller
         }
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();

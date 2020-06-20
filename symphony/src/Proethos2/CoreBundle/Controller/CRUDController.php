@@ -47,7 +47,7 @@ class CRUDController extends Controller
     public function listMeetingAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -70,7 +70,7 @@ class CRUDController extends Controller
         $output['meetings'] = $meetings;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -110,7 +110,7 @@ class CRUDController extends Controller
     public function updateMeetingAction($meeting_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -126,7 +126,7 @@ class CRUDController extends Controller
         }
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -161,7 +161,7 @@ class CRUDController extends Controller
     public function showMeetingAction($meeting_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -190,7 +190,7 @@ class CRUDController extends Controller
     public function deleteMeetingAction($meeting_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -206,7 +206,7 @@ class CRUDController extends Controller
         }
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -236,7 +236,7 @@ class CRUDController extends Controller
     public function listCommitteeProtocolAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -300,7 +300,7 @@ class CRUDController extends Controller
         }
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -317,7 +317,7 @@ class CRUDController extends Controller
     public function listInvestigatorProtocolAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -348,7 +348,7 @@ class CRUDController extends Controller
         $output['protocols'] = $protocols;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -365,7 +365,7 @@ class CRUDController extends Controller
     public function listCommitteeFaqAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -388,7 +388,7 @@ class CRUDController extends Controller
         $output['faqs'] = $faqs;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -439,7 +439,7 @@ class CRUDController extends Controller
     public function updateCommitteeFaqAction($faq_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -460,7 +460,7 @@ class CRUDController extends Controller
         $output['translations'] = $translations;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -511,7 +511,7 @@ class CRUDController extends Controller
     public function deleteCommitteeFaqAction($faq_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -527,7 +527,7 @@ class CRUDController extends Controller
         }
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -557,7 +557,7 @@ class CRUDController extends Controller
     public function listFaqAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -577,7 +577,7 @@ class CRUDController extends Controller
     public function listCommitteeDocumentAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -603,7 +603,7 @@ class CRUDController extends Controller
         $output['roles'] = $roles;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -653,7 +653,7 @@ class CRUDController extends Controller
     public function updateCommitteeDocumentAction($document_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -673,7 +673,7 @@ class CRUDController extends Controller
         $output['roles'] = $roles;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -720,7 +720,7 @@ class CRUDController extends Controller
     public function deleteCommitteeDocumentAction($document_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -737,7 +737,7 @@ class CRUDController extends Controller
         }
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -767,7 +767,7 @@ class CRUDController extends Controller
     public function listDocumentAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -802,7 +802,7 @@ class CRUDController extends Controller
     public function listCommitteeUserAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -862,7 +862,7 @@ class CRUDController extends Controller
         $output['countries'] = $countries;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -946,7 +946,7 @@ class CRUDController extends Controller
     public function updateUserProfileAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -960,7 +960,7 @@ class CRUDController extends Controller
         $output['countries'] = $countries;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -996,7 +996,7 @@ class CRUDController extends Controller
     public function updateCommitteeUserAction($user_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1027,7 +1027,7 @@ class CRUDController extends Controller
         $output['countries'] = $countries;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
             // user status
             $user_status = $user->getIsActive();
 
@@ -1097,7 +1097,7 @@ class CRUDController extends Controller
     public function getKeyToChangePasswordCommitteeUserAction($user_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1131,7 +1131,7 @@ class CRUDController extends Controller
     public function updateCommitteeUserRoleAction($user_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1151,7 +1151,7 @@ class CRUDController extends Controller
         $output['roles'] = $roles;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -1182,7 +1182,7 @@ class CRUDController extends Controller
     public function deleteCommitteeUserAction($user_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1198,7 +1198,7 @@ class CRUDController extends Controller
         }
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -1228,7 +1228,7 @@ class CRUDController extends Controller
     public function listContactAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1249,7 +1249,7 @@ class CRUDController extends Controller
         // $translations = $trans_repository->findTranslations($help[0]);
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -1299,7 +1299,7 @@ class CRUDController extends Controller
     public function listHelpAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1324,7 +1324,7 @@ class CRUDController extends Controller
     public function updateHelpAction($help_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1345,7 +1345,7 @@ class CRUDController extends Controller
         $output['translations'] = $translations;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -1386,7 +1386,7 @@ class CRUDController extends Controller
     public function showHelpAction($help_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1414,7 +1414,7 @@ class CRUDController extends Controller
     public function checkHelpAction($help_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1446,7 +1446,7 @@ class CRUDController extends Controller
     public function listMailAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1471,7 +1471,7 @@ class CRUDController extends Controller
     public function updateMailAction($mail_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1491,7 +1491,7 @@ class CRUDController extends Controller
         $output['translations'] = $translations;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -1531,7 +1531,7 @@ class CRUDController extends Controller
     public function showMailAction($mail_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1559,7 +1559,7 @@ class CRUDController extends Controller
     public function checkMailAction($mail_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1591,7 +1591,7 @@ class CRUDController extends Controller
     public function listConfigurationAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1628,7 +1628,7 @@ class CRUDController extends Controller
     public function updateConfigurationAction($configuration_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1647,7 +1647,7 @@ class CRUDController extends Controller
         }
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -1690,7 +1690,7 @@ class CRUDController extends Controller
     public function listControlledListUploadTypeExtensionAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1701,7 +1701,7 @@ class CRUDController extends Controller
         $output['items'] = $items;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -1735,7 +1735,7 @@ class CRUDController extends Controller
     public function updateControlledListUploadTypeExtensionAction($item_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1750,7 +1750,7 @@ class CRUDController extends Controller
         $output['item'] = $item;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -1786,7 +1786,7 @@ class CRUDController extends Controller
     public function listControlledListUploadTypeAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1802,7 +1802,7 @@ class CRUDController extends Controller
         $output['extensions'] = $extensions;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -1852,7 +1852,7 @@ class CRUDController extends Controller
     public function updateControlledListUploadTypeAction($item_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1875,7 +1875,7 @@ class CRUDController extends Controller
         $output['translations'] = $translations;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -1930,7 +1930,7 @@ class CRUDController extends Controller
     public function listControlledListRecruitmentStatusAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -1942,7 +1942,7 @@ class CRUDController extends Controller
         $output['items'] = $items;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -1984,7 +1984,7 @@ class CRUDController extends Controller
     public function updateControlledListRecruitmentStatusAction($item_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -2003,7 +2003,7 @@ class CRUDController extends Controller
         $output['translations'] = $translations;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -2047,7 +2047,7 @@ class CRUDController extends Controller
     public function listControlledListMonitoringActionAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -2059,7 +2059,7 @@ class CRUDController extends Controller
         $output['items'] = $items;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -2101,7 +2101,7 @@ class CRUDController extends Controller
     public function updateControlledListMonitoringActionAction($item_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -2120,7 +2120,7 @@ class CRUDController extends Controller
         $output['translations'] = $translations;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -2164,7 +2164,7 @@ class CRUDController extends Controller
     public function listControlledListClinicalTrialNameAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -2176,7 +2176,7 @@ class CRUDController extends Controller
         $output['items'] = $items;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -2219,7 +2219,7 @@ class CRUDController extends Controller
     public function updateControlledListClinicalTrialNameAction($item_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -2238,7 +2238,7 @@ class CRUDController extends Controller
         $output['translations'] = $translations;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -2283,7 +2283,7 @@ class CRUDController extends Controller
     public function listControlledListGenderAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -2295,7 +2295,7 @@ class CRUDController extends Controller
         $output['items'] = $items;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();
@@ -2337,7 +2337,7 @@ class CRUDController extends Controller
     public function updateControlledListGenderAction($item_id)
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -2356,7 +2356,7 @@ class CRUDController extends Controller
         $output['translations'] = $translations;
 
         // checking if was a post request
-        if($this->getRequest()->isMethod('POST')) {
+        if($this->get('request_stack')->getCurrentRequest()->isMethod('POST')) {
 
             // getting post data
             $post_data = $request->request->all();

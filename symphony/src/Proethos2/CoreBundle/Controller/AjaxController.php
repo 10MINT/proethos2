@@ -40,7 +40,7 @@ class AjaxController extends Controller
 
         $data = array();
 
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $encoders = array(new JsonEncoder());
         $normalizers = array(new GetSetMethodNormalizer());
         $serializer = new Serializer($normalizers, $encoders);

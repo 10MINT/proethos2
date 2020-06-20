@@ -35,7 +35,7 @@ class IndexController extends Controller
     public function indexAction()
     {
         $output = array();
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
@@ -90,7 +90,7 @@ class IndexController extends Controller
      */
     public function changeLocaleAction($locale)
     {
-        $request = $this->getRequest();
+        $request = $this->get('request_stack')->getCurrentRequest();
 
         // some logic to determine the $locale
         $request->getSession()->set('_locale', $locale);

@@ -65,7 +65,7 @@ We will create a new step based on fifth step:
 public function AdditionalStepAction($submission_id)
 {
     $output = array();
-    $request = $this->getRequest();
+    $request = $this->get('request_stack')->getCurrentRequest();
     $session = $request->getSession();
     $translator = $this->get('translator');
     $em = $this->getDoctrine()->getManager();
